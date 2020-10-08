@@ -5,7 +5,7 @@
  */
 package br.fvc.pi3.model;
 
-public class veiculo {
+public class Veiculo {
     private Integer numero;
     private String placa;
     private String fabricante;
@@ -13,7 +13,7 @@ public class veiculo {
     private String anomodelo;
     private String qtdportas;
 
-    public veiculo(Integer numero, String placa, String fabricante, String modelo, String anomodelo, String qtdportas) {
+    public Veiculo(Integer numero, String placa, String fabricante, String modelo, String anomodelo, String qtdportas) {
         this.numero = numero;
         this.placa = placa;
         this.fabricante = fabricante;
