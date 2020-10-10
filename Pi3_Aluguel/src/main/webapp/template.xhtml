@@ -6,6 +6,16 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title></title>
+
+        <style>
+            .right {
+                position: absolute;
+                right: 0px;
+                width: 300px;
+                border: 3px solid #73AD21;
+                padding: 10px;
+            }
+        </style>    
     </h:head>
     <h:body>
         <h:panelGrid columns="2">
@@ -14,11 +24,14 @@
         </h:panelGrid>
         <h:form>
             <p:menubar>
-                <p:menuitem value="Home" url="index.jsf"></p:menuitem>
-                <p:menuitem value="Gerenciar Usuário" url="gerenciar-usuario.jsf"></p:menuitem>
+                <p:menuitem value="Home" url="home.jsf"></p:menuitem>
+                <p:menuitem value="Cliente" url="cadastroCliente.jsf"></p:menuitem>
+                <p:menuitem value="Veículo" url="cadastroVeiculo.jsf"></p:menuitem>
+                <p:menuitem value="Atendente" url="cadastroAtendente.jsf"></p:menuitem>
+                <p:menuitem value="Aluguel" url="cadastroAluguel.jsf"></p:menuitem>
+                <p:menuitem styleClass="right" value="Desconectar" ></p:menuitem>
             </p:menubar>
         </h:form>
-        <hr/>
         <ui:insert></ui:insert>
     </h:body>
 </html>
