@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package br.fvc.pi3.model;
 
 public class Aluguel {
     private Integer idaluguel;
-    private String veiculo;
+    private Veiculo veiculo;
     private String dataaluguel;
     private String dataentrega;
-    private String cliente;
+    private Cliente cliente;
     private String entregue;
     private String observacao;
     private String valorpago;
 
-    public Aluguel(Integer idaluguel, String veiculo, String dataaluguel, String dataentrega, String cliente, String entregue, String observacao, String valorpago) {
+    public Aluguel(Integer idaluguel, Veiculo veiculo, String dataaluguel, String dataentrega, Cliente cliente, String entregue, String observacao, String valorpago) {
         this.idaluguel = idaluguel;
         this.veiculo = veiculo;
         this.dataaluguel = dataaluguel;
@@ -26,6 +27,8 @@ public class Aluguel {
         this.valorpago = valorpago;
     }
 
+
+
     public Integer getIdaluguel() {
         return idaluguel;
     }
@@ -34,13 +37,15 @@ public class Aluguel {
         this.idaluguel = idaluguel;
     }
 
-    public String getVeiculo() {
+    
+    public Veiculo getVeiculo() {
         return veiculo;
     }
 
-    public void setVeiculo(String veiculo) {
+    public void setVeiculo(Veiculo veiculo) {
         this.veiculo = veiculo;
     }
+    
 
     public String getDataaluguel() {
         return dataaluguel;
@@ -58,11 +63,11 @@ public class Aluguel {
         this.dataentrega = dataentrega;
     }
 
-    public String getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 
-    public void setCliente(String cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
@@ -89,5 +94,5 @@ public class Aluguel {
     public void setValorpago(String valorpago) {
         this.valorpago = valorpago;
     }
-    
+
 }
