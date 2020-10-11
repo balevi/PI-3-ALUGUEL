@@ -1,19 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.fvc.pi3.model;
 
-public class Veiculo {
-    private Integer numero;
+import java.io.Serializable;
+import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "veiculo")
+public class Veiculo implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long numero;
     private String placa;
     private String fabricante;
     private String modelo;
     private String anomodelo;
     private String qtdportas;
 
-    public Veiculo(Integer numero, String placa, String fabricante, String modelo, String anomodelo, String qtdportas) {
+    public Veiculo() {
+    }
+    
+    public Veiculo(Long numero, String placa, String fabricante, String modelo, String anomodelo, String qtdportas) {
         this.numero = numero;
         this.placa = placa;
         this.fabricante = fabricante;
@@ -22,11 +32,11 @@ public class Veiculo {
         this.qtdportas = qtdportas;
     }
 
-    public Integer getNumero() {
+    public Long getNumero() {
         return numero;
     }
 
-    public void setNumero(Integer numero) {
+    public void setNumero(Long numero) {
         this.numero = numero;
     }
 
@@ -68,6 +78,31 @@ public class Veiculo {
 
     public void setQtdportas(String qtdportas) {
         this.qtdportas = qtdportas;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 31 * hash + Objects.hashCode(this.numero);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Veiculo other = (Veiculo) obj;
+        if (!Objects.equals(this.numero, other.numero)) {
+            return false;
+        }
+        return true;
     }
     
 }

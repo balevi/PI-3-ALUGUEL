@@ -1,19 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.fvc.pi3.model;
 
-public class Cliente {
-    private Integer cpf;
+import java.io.Serializable;
+import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "cliente")
+public class Cliente implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String cpf;
     private String nomecliente;
     private String endereco;
     private String email;
     private String uf;
     private String telefone;
 
-    public Cliente(Integer cpf, String nomecliente, String endereco, String email, String uf, String telefone) {
+    public Cliente() {
+    }
+
+    public Cliente(Long id, String cpf, String nomecliente, String endereco, String email, String uf, String telefone) {
+        this.id = id;
         this.cpf = cpf;
         this.nomecliente = nomecliente;
         this.endereco = endereco;
@@ -22,11 +34,19 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    public Integer getCpf() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(Integer cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -68,6 +88,31 @@ public class Cliente {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 71 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cliente other = (Cliente) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
     }
     
 }

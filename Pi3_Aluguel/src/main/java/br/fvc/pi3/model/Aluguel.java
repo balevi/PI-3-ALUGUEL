@@ -1,66 +1,79 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package br.fvc.pi3.model;
 
-public class Aluguel {
-    private Integer idaluguel;
-    private Veiculo veiculo;
-    private String dataaluguel;
-    private String dataentrega;
+import java.io.Serializable;
+import java.util.List;
+import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+import javax.persistence.Id;
+
+@Entity
+@Table(name = "aluguel")
+public class Aluguel implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private List<Veiculo> listaVeiculo;
+    
+    @Column(name = "data_aluguel")
+    private String dataAluguel;
+    
+    @Column(name = "data_entrega")
+    private String dataEntrega;
+    
     private Cliente cliente;
     private String entregue;
     private String observacao;
-    private String valorpago;
+    
+    @Column(name = "valor_pago")
+    private String valorPago;
+    
+    public Aluguel(){}
 
-    public Aluguel(Integer idaluguel, Veiculo veiculo, String dataaluguel, String dataentrega, Cliente cliente, String entregue, String observacao, String valorpago) {
-        this.idaluguel = idaluguel;
-        this.veiculo = veiculo;
-        this.dataaluguel = dataaluguel;
-        this.dataentrega = dataentrega;
+    public Aluguel(Long id, List<Veiculo> listaVeiculo, String dataAluguel, String dataEntrega, Cliente cliente, String entregue, String observacao, String valorPago) {
+        this.id = id;
+        this.listaVeiculo = listaVeiculo;
+        this.dataAluguel = dataAluguel;
+        this.dataEntrega = dataEntrega;
         this.cliente = cliente;
         this.entregue = entregue;
         this.observacao = observacao;
-        this.valorpago = valorpago;
+        this.valorPago = valorPago;
     }
 
-
-
-    public Integer getIdaluguel() {
-        return idaluguel;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdaluguel(Integer idaluguel) {
-        this.idaluguel = idaluguel;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    
-    public Veiculo getVeiculo() {
-        return veiculo;
+    public List<Veiculo> getListaVeiculo() {
+        return listaVeiculo;
     }
 
-    public void setVeiculo(Veiculo veiculo) {
-        this.veiculo = veiculo;
-    }
-    
-
-    public String getDataaluguel() {
-        return dataaluguel;
+    public void setListaVeiculo(List<Veiculo> listaVeiculo) {
+        this.listaVeiculo = listaVeiculo;
     }
 
-    public void setDataaluguel(String dataaluguel) {
-        this.dataaluguel = dataaluguel;
+    public String getDataAluguel() {
+        return dataAluguel;
     }
 
-    public String getDataentrega() {
-        return dataentrega;
+    public void setDataAluguel(String dataAluguel) {
+        this.dataAluguel = dataAluguel;
     }
 
-    public void setDataentrega(String dataentrega) {
-        this.dataentrega = dataentrega;
+    public String getDataEntrega() {
+        return dataEntrega;
+    }
+
+    public void setDataEntrega(String dataEntrega) {
+        this.dataEntrega = dataEntrega;
     }
 
     public Cliente getCliente() {
@@ -87,12 +100,37 @@ public class Aluguel {
         this.observacao = observacao;
     }
 
-    public String getValorpago() {
-        return valorpago;
+    public String getValorPago() {
+        return valorPago;
     }
 
-    public void setValorpago(String valorpago) {
-        this.valorpago = valorpago;
+    public void setValorPago(String valorPago) {
+        this.valorPago = valorPago;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 37 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Aluguel other = (Aluguel) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
     }
 
 }
