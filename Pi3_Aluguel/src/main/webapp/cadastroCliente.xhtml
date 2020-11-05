@@ -4,8 +4,79 @@
              xmlns:h="http://xmlns.jcp.org/jsf/html"
              xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
              template="template.xhtml"
-             xmlns:p="http://primefaces.org/ui">
-    <center>
-        <h1>Cadastro de Cliente</h1>
-    </center>    
+             xmlns:p="http://primefaces.org/ui"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Gerenciamento de Clientes</title>
+        <style>
+            .div_formulario{
+                align-self: center;
+                margin-top: 3rem;
+                margin-left: 3rem;
+            }
+            .ui-panelgrid>*>td,.ui-panelgrid .ui-panelgrid-cell {
+                border: none;
+            }
+            .input_spacing{
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="div_formulario">
+            <p:panelGrid columns="4">
+                <p:outputLabel for="txt_nome"  style="width:100px" value="Nome:" />
+                <p:inputText id="txt_nome" class="input_spacing" />            
+
+                <p:outputLabel for="txt_cpf"  style="width:100px" value="CPF:" />
+                <p:inputText id="txt_cpf" class="input_spacing" />
+
+                <p:outputLabel for="txt_email"  style="width:100px" value="Email:" />
+                <p:inputText id="txt_email" class="input_spacing" />
+
+                <p:outputLabel for="txt_telefone" style="width:100px" value="Telefone:" />
+                <p:inputText id="txt_telefone" class="input_spacing" />
+
+                <p:outputLabel for="txt_endereço"  style="width:100px" value="Endereço:" />
+                <p:inputText id="txt_endereço" class="input_spacing" />
+
+                <p:outputLabel for="drop_uf" style="width:100px" value="UF:" />
+                <p:selectOneMenu id="drop_uf" style="width:210px" >
+                    <f:selectItem itemLabel="Selecione" itemValue="#{null}" noSelectionOption="true"/>
+                    <f:selectItem itemLabel="AC" itemValue="AC" />
+                    <f:selectItem itemLabel="AL" itemValue="AL" />
+                    <f:selectItem itemLabel="AP" itemValue="AP" />
+                    <f:selectItem itemLabel="AM" itemValue="AM" />
+                    <f:selectItem itemLabel="BA" itemValue="BA" />
+                    <f:selectItem itemLabel="CE" itemValue="CE" />
+                    <f:selectItem itemLabel="DF" itemValue="DF" />
+                    <f:selectItem itemLabel="ES" itemValue="ES" />
+                    <f:selectItem itemLabel="GO" itemValue="GO" />
+                    <f:selectItem itemLabel="MA" itemValue="MA" />
+                    <f:selectItem itemLabel="MT" itemValue="MT" />
+                    <f:selectItem itemLabel="MS" itemValue="MS" />
+                    <f:selectItem itemLabel="MG" itemValue="MG" />
+                    <f:selectItem itemLabel="PA" itemValue="PA" />
+                    <f:selectItem itemLabel="PB" itemValue="PB" />
+                    <f:selectItem itemLabel="PR" itemValue="PR" />
+                    <f:selectItem itemLabel="PE" itemValue="PE" />
+                    <f:selectItem itemLabel="PI" itemValue="PI" />
+                    <f:selectItem itemLabel="RJ" itemValue="RJ" />
+                    <f:selectItem itemLabel="RN" itemValue="RN" />
+                    <f:selectItem itemLabel="RS" itemValue="RS" />
+                    <f:selectItem itemLabel="RO" itemValue="RO" />
+                    <f:selectItem itemLabel="RR" itemValue="RR" />
+                    <f:selectItem itemLabel="SC" itemValue="SC" />
+                    <f:selectItem itemLabel="SP" itemValue="SP" />
+                    <f:selectItem itemLabel="SE" itemValue="SE" />
+                    <f:selectItem itemLabel="TO" itemValue="TO" />
+                </p:selectOneMenu>  
+                <p:outputLabel  style="width:100px" value="" />
+                <p:outputLabel  style="width:100px" value="" />
+                <p:outputLabel  style="width:100px" value="" />
+                <p:commandButton value="Salvar" style="float: right "/>
+            </p:panelGrid> 
+        </div>
+    </h:body> 
 </ui:decorate>

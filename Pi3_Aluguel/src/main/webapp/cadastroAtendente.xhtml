@@ -5,7 +5,44 @@
              xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
              template="template.xhtml"
              xmlns:p="http://primefaces.org/ui">
-    <center>
-        <h1>Cadastro de Atendente</h1>
-    </center>    
+    <h:head>
+        <title>Gerenciamento de Clientes</title>
+        <style>
+            .div_formulario{
+                align-self: center;
+                margin-top: 3rem;
+                margin-left: 3rem;
+            }
+            .ui-panelgrid>*>td,.ui-panelgrid .ui-panelgrid-cell {
+                border: none;
+            }
+            .input_spacing{
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="div_formulario">
+            <p:panelGrid columns="4">
+                <p:outputLabel for="txt_nome"  style="width:100px" value="Nome:" />
+                <p:inputText id="txt_nome" class="input_spacing" />            
+
+                <p:outputLabel for="txt_login"  style="width:100px" value="Login:" />
+                <p:inputText id="txt_login" class="input_spacing" />
+
+                <p:outputLabel for="txt_senha"  style="width:100px" value="Senha:" />
+                <p:inputText id="txt_senha" class="input_spacing" />
+
+                <p:outputLabel for="txt_cargo" style="width:100px" value="Cargo:" />
+                <p:inputText id="txt_cargo" class="input_spacing" />
+
+                <p:outputLabel for="txt_email"  style="width:100px" value="Email:" />
+                <p:inputText id="txt_email" class="input_spacing" />
+                
+                <p:outputLabel style="width:100px" value="" />
+                <p:commandButton value="Salvar" style="float: right "/>
+            </p:panelGrid> 
+        </div>
+    </h:body>   
 </ui:decorate>

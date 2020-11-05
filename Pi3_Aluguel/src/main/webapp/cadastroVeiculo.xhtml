@@ -4,9 +4,56 @@
              xmlns:h="http://xmlns.jcp.org/jsf/html"
              xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
              template="template.xhtml"
-             xmlns:p="http://primefaces.org/ui">
-    <center>
-        <h1>Cadastro de Veículo</h1>
-        <h3>Teste PH</h3>
-    </center>    
+             xmlns:p="http://primefaces.org/ui"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Gerenciamento de Clientes</title>
+        <style>
+            .div_formulario{
+                align-self: center;
+                margin-top: 3rem;
+                margin-left: 3rem;
+            }
+            .ui-panelgrid>*>td,.ui-panelgrid .ui-panelgrid-cell {
+                border: none;
+            }
+
+        </style>
+    </h:head>
+    <h:body>
+        <div class="div_formulario">
+            <p:panelGrid columns="4">
+                <p:outputLabel for="txt_fabricante"  style="width:100px" value="Fabricante:" />
+                <p:inputText id="txt_fabricante" class="input_spacing" />            
+
+                <p:outputLabel for="txt_numero"  style="width:100px" value="Numero:" />
+                <p:inputText id="txt_numero" class="input_spacing" />
+
+                <p:outputLabel for="txt_modelo"  style="width:100px" value="Modelo:" />
+                <p:inputText id="txt_modelo" class="input_spacing" />
+
+                <p:outputLabel for="txt_ano" style="width:100px" value="Ano:" />
+                <p:inputText id="txt_ano" class="input_spacing" />
+
+                <p:outputLabel for="txt_placa"  style="width:100px" value="Placa:" />                
+                <p:inputText id="txt_placa" class="input_spacing" />
+
+                <p:outputLabel for="select_portas"  style="width:100px" value="Portas" />                
+                <p:selectOneButton value="" id="select_portas">
+                    <f:selectItem itemLabel="2 Portas" itemValue="2" />
+                    <f:selectItem itemLabel="4 Portas" itemValue="4" />                    
+                </p:selectOneButton>  
+
+                <p:outputLabel style="width:100px" value="Acessorio:" />
+                <p:selectManyCheckbox id="basic" >
+                    <f:selectItem itemLabel="Ar Condicionado" itemValue="Ar Condicionado" />
+                    <f:selectItem itemLabel="Travas Elétricas" itemValue="Travas Elétricas" />
+                    <f:selectItem itemLabel="Multimidia" itemValue="Painel Multimidia" />
+                    <f:selectItem itemLabel="Direção Hidraulica" itemValue="Direção Hidraulica" />
+                </p:selectManyCheckbox>
+                <p:outputLabel style="width:100px" value="" />
+                <p:commandButton value="Salvar" style="float: right "/>              
+            </p:panelGrid>                        
+        </div>
+    </h:body> 
 </ui:decorate>

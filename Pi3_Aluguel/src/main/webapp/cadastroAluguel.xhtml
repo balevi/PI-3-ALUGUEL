@@ -5,10 +5,55 @@
              xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
              template="template.xhtml"
              xmlns:p="http://primefaces.org/ui">
-    <center>
-        <h1>Cadastro de Aluguel</h1>
-        <h2>teste eudson</h2>
-    </center>    
+    <h:head>
+        <title>Gerenciamento de Alugueis</title>
+        <style>
+            .div_formulario{
+                align-self: center;
+                margin-top: 3rem;
+                margin-left: 3rem;
+            }
+            .ui-panelgrid>*>td,.ui-panelgrid .ui-panelgrid-cell {
+                border: none;
+            }
+            .input_spacing{
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="div_formulario">
+            <p:panelGrid columns="4">
+                <p:outputLabel for="txt_nome_cliente"  style="width:100px" value="Nome:" />
+                <p:inputText id="txt_nome_cliente" class="input_spacing" />            
+
+                <p:outputLabel for="txt_cpf_cliente"  style="width:100px" value="CPF:" />
+                <p:inputText id="txt_cpf_cliente" class="input_spacing" />
+
+                <p:outputLabel for="txt_modelo_veiculo"  style="width:100px" value="Modelo:" />
+                <p:inputText id="txt_modelo_veiculo" class="input_spacing" />
+
+                <p:outputLabel for="txt_ano_veiculo"  style="width:100px" value="Ano:" />
+                <p:inputText id="txt_ano_veiculo" class="input_spacing" />
+
+                <p:outputLabel for="txt_telefone_cliente" style="width:100px" value="Telefone:" />
+                <p:inputText id="txt_telefone_cliente" class="input_spacing" />
+
+                <p:outputLabel for="txt_data_aluguel"  style="width:100px" value="Aluguel:" />
+                <p:inputText id="txt_data_aluguel" class="input_spacing" />
+
+                <p:outputLabel for="txt_data_entrega"  style="width:100px" value="Entrega:" />
+                <p:inputText id="txt_data_entrega" class="input_spacing" />  
+                
+                <p:outputLabel for="txt_valor"  style="width:100px" value="Valor:" />
+                <p:inputText id="txt_valor" class="input_spacing" />
+                
+                <p:outputLabel  style="width:100px" value="" />
+                <p:outputLabel  style="width:100px" value="" />
+                <p:outputLabel  style="width:100px" value="" />
+                <p:commandButton value="Salvar" style="float: right "/>
+            </p:panelGrid> 
+        </div>
+    </h:body>
 </ui:decorate>
-
-

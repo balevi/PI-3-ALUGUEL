@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             template="template.xhtml"
+             xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Relatorio por Data</title>
+        <style>
+            .div_formulario{
+                align-self: center;
+                margin-top: 3rem;
+                margin-left: 3rem;
+            }
+            .ui-panelgrid>*>td,.ui-panelgrid .ui-panelgrid-cell {
+                border: none;
+            }
+            .input_spacing{
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="div_formulario">
+            <p:panelGrid columns="4">
+                <p:outputLabel for="txt_data_inicial"  style="width:100px" value="Data Retirada:" />
+                <p:inputText id="txt_data_inicial" class="input_spacing" />            
+
+                <p:outputLabel for="txt_data_final"  style="width:100px" value="Data Final:" />
+                <p:inputText id="txt_data_final" class="input_spacing" />
+
+                <p:outputLabel  style="width:100px" value="" />
+                <p:outputLabel  style="width:100px" value="" />                
+
+                <p:outputLabel  style="width:100px" value="" />
+                <p:commandButton value="Emitir" onclick="PF('dialogRelatorio').show()" style="float: right "/>
+            </p:panelGrid>             
+        </div>
+        <p:dialog header="Relatorio" widgetVar="dialogRelatorio" modal="true" height="100" width="70%" resizable="false" draggable="false" closable="false" >
+            <h:form>
+                <p:dataTable>                        
+                    <p:column headerText="Data Retirada">
+                        <h:outputText value="#{null}"/>
+                    </p:column>
+
+                    <p:column headerText="Data Entregue">
+                        <h:outputText value="#{null}"/>
+                    </p:column>
+
+                    <p:column headerText="Veiculo">
+                        <h:outputText value="#{null}"/>
+                    </p:column>
+
+                    <p:column headerText="Valor Total">
+                        <h:outputText value="#{null}"/>
+                    </p:column>
+                                          
+                </p:dataTable>
+                <p:commandButton value="Voltar"  onclick="PF('dialogRelatorio').hide();"></p:commandButton>                                 
+            </h:form>
+        </p:dialog>        
+    </h:body>
+</ui:decorate>
