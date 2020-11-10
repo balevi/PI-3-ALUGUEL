@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <!--
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
@@ -40,16 +42,20 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bancopi3?zeroDateTimeBehavior=convertToNull</property>
-    <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">ADMIN</property>
-    <property name="hbm2ddl.auto">update</property>
-    <mapping class="br.fvc.pi3.model.Aluguel" />
-    <mapping class="br.fvc.pi3.model.cliente" />
-    <mapping class="br.fvc.pi3.model.Usuario" />
-    <mapping class="br.fvc.pi3.model.Veiculo" />
-  </session-factory>
+    <session-factory>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="generate_statistics">true</property>
+        <property name="use_sql_comments">true</property>  
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost/bancopi3?zeroDateTimeBehavior=convertToNull</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">ADMIN</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <mapping class="br.fvc.pi3.model.Aluguel" />
+        <mapping class="br.fvc.pi3.model.cliente" />
+        <mapping class="br.fvc.pi3.model.Usuario" />
+        <mapping class="br.fvc.pi3.model.Veiculo" />
+    </session-factory>
 </hibernate-configuration>

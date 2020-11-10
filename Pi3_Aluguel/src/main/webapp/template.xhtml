@@ -45,10 +45,10 @@
                     <p:menuitem value="Gerenciar Veiculos" onclick="PF('dialogGerenciaVeiculo').show();" ></p:menuitem>
                 </p:submenu>
                 
-                <p:submenu label="Atendente">
-                    <p:menuitem value="Cadastro" url="cadastroAtendente.xhtml" ></p:menuitem>
+                <p:submenu label="Usuário">
+                    <p:menuitem value="Cadastro" url="cadastroUsuario.xhtml" ></p:menuitem>
                     <p:separator />
-                    <p:menuitem value="Gerenciar Atendentes"  onclick="PF('dialogGerenciaAtendente').show();"> </p:menuitem>
+                    <p:menuitem value="Gerenciar Usuários"  onclick="PF('dialogGerenciaUsuario').show();"> </p:menuitem>
                 </p:submenu>
                 
                 <p:submenu label="Aluguel">                    
@@ -163,7 +163,7 @@
             </p:dialog>
             
             <!-- MODAL ATENDENTE -->
-            <p:dialog header="Cliente" widgetVar="dialogGerenciaAtendente" modal="true" height="100" width="70%" resizable="false" draggable="false" >
+            <p:dialog header="Usuário" widgetVar="dialogGerenciaUsuario" modal="true" height="100" width="70%" resizable="false" draggable="false" >
                 <h:form>
                     <p:dataTable selectionMode="single" >                        
                         <p:column headerText="Nome">

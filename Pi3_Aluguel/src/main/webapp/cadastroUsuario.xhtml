@@ -26,22 +26,22 @@
         <div class="div_formulario">
             <p:panelGrid columns="4">
                 <p:outputLabel for="txt_nome"  style="width:100px" value="Nome:" />
-                <p:inputText id="txt_nome" class="input_spacing" />            
+                <p:inputText id="txt_nome" class="input_spacing" value="#{usuarioBean.usuario.nome}"/>            
 
                 <p:outputLabel for="txt_login"  style="width:100px" value="Login:" />
-                <p:inputText id="txt_login" class="input_spacing" />
+                <p:inputText id="txt_login" class="input_spacing" value="#{usuarioBean.usuario.login}"/>
 
                 <p:outputLabel for="txt_senha"  style="width:100px" value="Senha:" />
-                <p:inputText id="txt_senha" class="input_spacing" />
+                <p:inputText id="txt_senha" class="input_spacing" value="#{usuarioBean.usuario.senha}"/>
 
                 <p:outputLabel for="txt_cargo" style="width:100px" value="Cargo:" />
-                <p:inputText id="txt_cargo" class="input_spacing" />
+                <p:inputText id="txt_cargo" class="input_spacing" value="#{usuarioBean.usuario.cargo}"/>
 
                 <p:outputLabel for="txt_email"  style="width:100px" value="Email:" />
-                <p:inputText id="txt_email" class="input_spacing" />
+                <p:inputText id="txt_email" class="input_spacing" value="#{usuarioBean.usuario.email}"/>
                 
                 <p:outputLabel style="width:100px" value="" />
-                <p:commandButton value="Salvar" style="float: right "/>
+                <p:commandButton action="#{usuarioBean.salvar}" value="Salvar" style="float: right "/>
             </p:panelGrid> 
         </div>
     </h:body>   
